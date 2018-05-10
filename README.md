@@ -31,7 +31,7 @@ $conversion = [
     '{{state}}' => $obj->statename
 ];
 
-// Second, Init the object by giving it the snippet file location and the converstion array.
+// Second, Init the object by giving it the snippet file location and the conversion array.
 $t = new SimpleTemplating(dirname(__FILE__) . '/your_file.snippet.html', $conversion);
 
 // Finally, Echo to screen
