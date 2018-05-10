@@ -20,20 +20,21 @@ _html snippet file_
 _php snippet to call and apply values_
 ```
 
-// data object
+// Data object. This could be anything -- an API, database, remote request. 
 $obj = new DataObjectThingy(param1, param2);
 
-// strings to be converted
+// First, set up an array of PLACEHOLDERS and REPLACEMENT 
+// VALUES will be applied to the conversion
 $conversion = [
     '{{nonce}}' => wp_nonce_field('edit_location'),
     '{{city}}' => $obj->cityname,
     '{{state}}' => $obj->statename
 ];
 
-// init the object
+// Second, Init the object by giving it the snippet file location and the converstion array.
 $t = new SimpleTemplating(dirname(__FILE__) . '/your_file.snippet.html', $conversion);
 
-// echo to screen
+// Finally, Echo to screen
 echo $t->echo();
 ```
 
